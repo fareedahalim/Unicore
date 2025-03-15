@@ -18,7 +18,7 @@ export class UserRepositoryImpl implements UserRepository {
 
             return new User(
                 userDoc.id.toString(), 
-                userDoc.name, 
+                userDoc.fullName, 
                 userDoc.email, 
                 userDoc.password, 
                 userDoc.image || "", 
@@ -35,7 +35,7 @@ export class UserRepositoryImpl implements UserRepository {
     async create(user: User): Promise<void> {
         try {
             const userDoc = new UserModel({
-                name: user.name,
+                fullName: user.fullName,
                 email: user.email,
                 password: user.password,
                 image: user.image,

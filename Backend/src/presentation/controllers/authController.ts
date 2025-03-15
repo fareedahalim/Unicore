@@ -41,10 +41,10 @@ export const AuthController = {
     },
     register: async (req: Request, res: Response, next: NextFunction) => {
         try {
-            const { name, email, password } = req.body;
+            const { fullName, email, password } = req.body;
 
             console.log("entering to the registering")
-             await reigisterUser.execute(name, email, password);
+             await reigisterUser.execute(fullName, email, password);
 
             res.status(STATUS_CODES.CREATED).json({ message: "User registered successfully" });
         } catch (error) {

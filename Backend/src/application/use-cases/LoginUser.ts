@@ -10,8 +10,9 @@ export class LoginUser{
     if(!user) {
       throw new Error("User not found");
     }
-
+    console.log("user===",user)
     const isPasswordValid = await HashPasswordService.comparePasswords(password,user.password);
+console.log(isPasswordValid)
     if(!isPasswordValid) {
       throw new Error("Invalid credentials");
 

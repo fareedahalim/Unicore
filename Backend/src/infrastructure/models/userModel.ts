@@ -1,7 +1,7 @@
 import mongoose, { Schema, Document } from "mongoose";
 
 export interface UserDocument extends Document {
-  name: string;
+  fullName: string;
   email: string;
   password: string;
   image?: string;
@@ -12,7 +12,7 @@ export interface UserDocument extends Document {
 
 const UserSchema = new Schema<UserDocument>(
   {
-    name: { type: String, required: true },
+    fullName: { type: String, required: true },
     email: { type: String, unique: true, required: true },
     password: { type: String, required: true },
     image: { type: String, default: null },  // Default to null if no image
